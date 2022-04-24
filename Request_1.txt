@@ -1,0 +1,18 @@
+Request #1 Watch_TV-BE predicted performance
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX my: <http://127.0.0.1/bg/ont/test1#>
+SELECT (COUNT(?STB) as ?Count_STB)
+WHERE
+{
+  ?Prediction_ID my:prediction_timestamp "2022-04-19T04:20:00" .
+  ?Prediction_ID my:has_state_value "WatchTV" .
+  ?Prediction_ID my:prediction_detailes ?Prediction_detailes .
+  ?Prediction_detailes rdf:subject ?STB .
+  ?Prediction_detailes rdf:object ? "3" . 
+   
+}
+
+Response:    
+Count_STB
+1
